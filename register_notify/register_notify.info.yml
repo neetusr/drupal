@@ -1,0 +1,6 @@
+name: Register Notify
+description: 'Notifies admin when a user registers'
+package: Custom
+type: module
+version: 1.0
+core: 8.x

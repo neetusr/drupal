@@ -1,0 +1,11 @@
+<?php
+
+function hello_menu() {
+  return array(
+    'hello' => array( 
+      'title' => 'Hello', 
+      'description' => 'Displays "Hello world!"',
+      'route_name' => 'hello', 
+    ), 
+  ); 
+} 

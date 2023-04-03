@@ -1,0 +1,22 @@
+<?php
+/**
+* Implements hook_user_insert().
+*/
+function register_notify_user_insert($account) {
+	$email = \Drupal::config('system.site')->get('mail');
+	$params['account'] = $account;
+	drupal_mail('register_notify', 'new_user_notify', $email, $account->getPreferredLangcode(), $params);
+}
+
+/**
+* Implements hook_mail().
+*/
+function register_notify_mail($key, &$message, $params) {
+	switch ($key) {
+		case "new_user_notify":
+			$message["subject"] = t("A new user was created!", array());
+			$message["body"][] = t("A new user was created!", array());
+			break;
+	}
+}
+?>
